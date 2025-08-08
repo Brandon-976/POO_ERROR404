@@ -1,0 +1,27 @@
+vocales = {'a': 0, 'e': 0, 'i': 0, 'o': 0, 'u': 0}
+
+cadena = input("Ingresa una frase: ").lower()
+
+for caracter in cadena:
+    if caracter in vocales:
+        vocales[caracter] += 1
+
+
+print("Conteo de vocales:")
+for vocal, cantidad in vocales.items():
+    print(f"{vocal}: {cantidad}")
+
+
+while True:
+    consulta = input("¿Deseas consultar cuántas veces se repitió una vocal? (s/n): ").lower()
+    if consulta == 's':
+        vocal_buscar = input("Ingresa la vocal que deseas consultar (a, e, i, o, u): ").lower()
+        if vocal_buscar in vocales:
+            print(f"La vocal '{vocal_buscar}' se repitió {vocales[vocal_buscar]} veces.")
+        else:
+            print("Eso no es una vocal válida.")
+    elif consulta == 'n':
+        print("¡Hasta luego!")
+        break
+    else:
+        print("Respuesta no válida. Escribe 's' para sí o 'n' para no.")
