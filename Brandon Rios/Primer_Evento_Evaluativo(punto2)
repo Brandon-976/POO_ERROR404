@@ -1,0 +1,56 @@
+import random
+
+MINIMO = 0
+MAXIMO = 5
+
+tablero=[ ["-"] for cuadro in range(5) for cuadro in range(5)]
+
+# Ubicacion del tesoro aleatoria
+filas_y = random.randint(0, 4)
+columnas_y = random.randint(0, 4)
+tablero[filas_y][columnas_y] = "T"
+
+# Ubicacion de las trampas
+Trampas_Preparadas=0
+while Trampas_Preparadas<3:
+    filas = random.randint(0, 4)
+    columnas = random.randint(0, 4)
+    if tablero[filas][columnas] == "-":
+        tablero[filas][columnas] = "X"
+        Trampas_Preparadas += 1
+
+print("Bienvenido a Busqueda del tesoro")
+
+Nombre = input("Ingrese su nombre, por favor:")
+
+buscar_tesoro = True
+intentos = 0
+while buscar_tesoro and intentos < 5:
+    fila = int(input(f"ingrese la fila (0,4): "))
+    columna = int(input(f"ingrese la columna (0,4): "))
+    if not (0 <= fila <= 4 and 0 <= columna <= 4):
+        print("Esta mal. Intente de nuevo, seleccione bien los rangos.")
+        continue
+    print(f"{Nombre} has seleccionado la casilla ({fila}, {columna})")
+
+    if tablero[fila][columna] == "T":
+        print("¡FELICIDADES PLAYER! encontraste el tesoro")
+        buscar_tesoro = False
+
+    elif tablero[fila][columna] == "X":
+            print("Que duro caiste en una trampa")
+            buscar_tesoro = False
+    else:
+            print(f"Sigue buscando, no habia tesoro ahi. Tienes {4 - intentos} intentos restantes.")
+            intentos -= 1
+
+  
+print("\nTablero final:")
+def mostrar_tablero(tablero, ocultar=True):
+    for fila in tablero:
+        for cuadro in fila:
+            if ocultar and cuadro == "T":
+                print("-", end=" ")
+            else:
+                print(cuadro, end=" ")
+        print()
