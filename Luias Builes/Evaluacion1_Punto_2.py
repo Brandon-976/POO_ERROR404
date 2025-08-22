@@ -2,7 +2,7 @@ import random
 
 # Comenzamos con el numero de intentos permitidos
 N = 5
-INTENTOS = 5
+INTENTOS = 5 
 
 # Tapamos el tablero con "_"
 oculto = [["-" for _ in range(N)] for _ in range(N)]
