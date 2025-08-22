@@ -1,0 +1,63 @@
+# Clase Vehiculo
+class Vehiculo:
+    def __init__(self, marca, modelo, ruedas, color):
+        # Atributos basicos
+        self.marca = diseño
+        self.modelo = modelo
+        self.ruedas = ruedas
+        self.color = color
+
+    # metodo heredado 
+    def encender(self):
+        return f"El vehiculo {self.marca} {self.modelo} esta funcionado"
+
+    
+    def mover(self):
+        return f"El vehiculo {self.marca} se esta moviendo"
+
+    
+    def frenar(self):
+        return f"El vehiculo {self.marca} se detuvo"
+
+
+# Clase hija Carro
+class Carro(Vehiculo):
+    def __init__(self, marca, modelo, ruedas, color, puertas):
+        super().__init__(marca, modelo, ruedas, color)
+        self.puertas = puertas
+
+    
+    def mover(self):
+        return f"El carro {self.marca} avanza rapido con sus {self.ruedas} ruedas"
+
+    # metodo propio
+    def abrir_puertas(self):
+        return f"El carro tiene {self.puertas} puertas abiertas"
+
+
+# Clase hija Moto
+class Moto(Vehiculo):
+    def __init__(self, marca, modelo, ruedas, color, cilindraje):
+        super().__init__(marca, modelo, ruedas, color)
+        self.cilindraje = cilindraje
+
+    # Cc
+    def mover(self):
+        return f"La moto {self.marca} se  desplaza con un cilindraje de {self.cilindraje}cc"
+
+   
+    def se_accidenta(self):
+        return f"La moto {self.marca} {self.modelo} se accidenta y se muere"
+
+
+
+carro1 = Carro("peugeot", "208", 4, "negro", 4)
+moto1 = Moto("Honda", "Twister", 250, "Gris", 250)
+
+print(carro1.encender())      
+print(carro1.mover())          
+print(carro1.abrir_puertas())  
+
+print(moto1.encender())     
+print(moto1.se_accidenta()) 
+
