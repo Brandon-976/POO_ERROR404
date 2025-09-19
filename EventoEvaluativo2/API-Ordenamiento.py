@@ -1,3 +1,9 @@
+#integrantes:
+# BRANDON RIOS
+# LUIA BUILES
+# JESSICA MABEL TRIVINO
+# JEIDY ANGELICA ZAPATA
+
 import requests
 import math
 
@@ -251,4 +257,5 @@ def main():
         print("Opción inválida.")
 
 if __name__ == "__main__":
+
     main()
