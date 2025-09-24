@@ -1,0 +1,60 @@
+'''''
+n = 3  
+m = 4  
+
+matriz = [
+    [1,2,3,4],
+    [5,6,7,8],
+    [9,10,11,12]
+]
+
+
+
+matriz = [[(i * m) + j + 1 for j in range(m)] for i in range(n)]
+
+for i in range(n):
+    if i % 2 == 0:
+        
+        for valor in matriz[i]:
+            print(valor, end=' ')
+    else:
+        
+        for valor in reversed(matriz[i]):
+            print(valor, end=' ')
+'''
+
+
+
+
+
+
+
+
+n = int(input("Ingrese el número de filas: "))
+m = int(input("Ingrese el número de columnas: "))
+
+
+matriz = [[(i * m) + j + 1 for j in range(m)] for i in range(n)]
+print(matriz)
+for fila in matriz:
+    print(fila)
+'''''
+for j in range(m):
+    if j / 2 == 0:
+        for valor in matriz[j]:
+            print(valor, end=' ')
+    else:
+        for valor in reversed(matriz[j]):
+            print(valor, end=' ')
+'''''
+for j in range(m):
+  for i in range(n):
+    print(matriz[i][j], end=' ')
+    if j % 2 == 0:
+      for i in range(n):
+        print(matriz[i][j], end=' ')
+    else:
+      for i in range(n):
+        print(matriz[i][j], end=' ')
+
+    
