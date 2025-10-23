@@ -11,20 +11,27 @@ for i in range(filas):
         numero += 1
     matriz.append(fila)
 
-print("Así queda mi matriz:") 
+
+print("Así queda mi matriz:")
 for fila in matriz:
-    for valor in fila:
-        print(valor, end="\t") 
-    print()
+    print("\t".join(map(str, fila)))
 
 print("\nRecorrido:")
-for i in range(filas):
-    if i % 2 == 0:
-        for j in range(columnas):
+for suma in range(filas + columnas  -1):
+    if suma % 1 == 0:
+        i = min(suma, filas - 1)
+        j = suma - i
+        while i >= 0 and j < columnas:
             print(matriz[i][j], end=" ")
+            i -= 1 
+            j += 1
     else:
-        for j in range(columnas -1,-1, -1):
+        j = min(suma, columnas - 1)
+        i = suma - j
+        while j >= 0 and i < filas:
             print(matriz[i][j], end=" ")
+            i -= 1
+            j += 1
             
 
 
